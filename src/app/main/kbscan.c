@@ -231,6 +231,13 @@ bool kbscan_press(uint16_t key, bool pressed, uint8_t *const layer) {
                 }
             }
             break;
+        case COMBO_BREAK:
+            if (kbscan_enabled) {
+                if (pressed) {
+                    kbc_scancode(KF_E0 | 0x7C, true);
+                }
+            }
+            break;
         }
         break;
     case (KT_SCI):
